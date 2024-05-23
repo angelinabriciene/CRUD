@@ -9,18 +9,8 @@ public class Main {
         studentList.add("Dovydas");
         Scanner sc = new Scanner(System.in);
         while (true) {
-            System.out.println();
-            System.out.println("----------------------------");
-            System.out.println("Studentų Sąrašas:");
-            System.out.println("1. įvesti vardą");
-            System.out.println("2. atvaizduoti vardą");
-            System.out.println("3. redaguoti vardą");
-            System.out.println("4. trinti vardą");
-            System.out.println("5. išeiti iš programos");
-            System.out.println("----------------------------");
-            System.out.println();
-
-            int name = sc.nextInt();
+            infomesages();
+            int name = intInput(sc);
             sc.nextLine();
             switch (name) {
                 case 1:
@@ -41,9 +31,17 @@ public class Main {
 
         }
 
+    }
 
-//        PABAIGA
-
+    public static int intInput(Scanner sc) {
+        while (true) {
+            try {
+                return sc.nextInt();
+            } catch (Exception e) {
+                System.out.println("Pasirinkite komandą iš norodytų auksščiau ir įveskite jos skaitmenį");
+                sc.nextLine();
+            }
+        }
     }
 
     public static void existingStudents(ArrayList<String> studentList) {
@@ -88,5 +86,16 @@ public class Main {
         }
     }
 
-
+    public static void infomesages() {
+        System.out.println();
+        System.out.println("----------------------------");
+        System.out.println("Studentų Sąrašas:");
+        System.out.println("1. įvesti vardą");
+        System.out.println("2. atvaizduoti vardą");
+        System.out.println("3. redaguoti vardą");
+        System.out.println("4. trinti vardą");
+        System.out.println("5. išeiti iš programos");
+        System.out.println("----------------------------");
+        System.out.println();
+    }
 }
